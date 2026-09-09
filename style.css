@@ -9,10 +9,10 @@ body {
 .desktop {
     background-color: black;
     height: 100vh;
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .desktop-content {
@@ -69,4 +69,87 @@ body {
     color: black;
     font-family: arial, sans-serif;
     font-size: 16px;
+}
+
+.desktop-icon {
+    width: 80px;
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: 0.2s;
+    color: white;
+}
+
+.desktop-icon span {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.icon-image {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.desktop-icon:hover {
+    background-color: #333;
+}
+
+.browser-window {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    border: 2px solid #666;
+    display: none;
+    z-index: 10;
+}
+
+.browser-titlebar {
+    height: 40px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.close-button {
+    width: 30px;
+    height: 25px;
+    border: none;
+    background-color: #666;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #999;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.minimize-button {
+    width: 30px;
+    height: 25px;
+    border: none;
+    background-color: #666;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.minimize-button:hover {
+    background-color: #999;
 }

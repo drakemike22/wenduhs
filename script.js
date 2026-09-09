@@ -1,6 +1,36 @@
 
 const clock = document.querySelector(".clock");
 
+const browserIcon = document.querySelector(".desktop-icon");
+
+const closeButton = document.querySelector(".close-button");
+
+const browserWindow = document.querySelector(".browser-window");
+
+const minimizeButton = document.querySelector(".minimize-button");
+
+const taskbarWindows = document.querySelector(".taskbar-windows");
+
+const browserTaskbarButton = document.createElement("button");
+
+browserTaskbarButton.textContent = "Wenduhs Browser";
+
+taskbarWindows.appendChild(browserTaskbarButton);
+
+browserIcon.addEventListener("click", function () {
+    browserWindow.style.display = "block";
+});
+
+closeButton.addEventListener("click", function() {
+    browserWindow.style.display = "none";
+});
+
+minimizeButton.addEventListener("click", function() {
+    browserWindow.style.display = "none";  
+});
+
+
+
 function updateClock() {
 
 
