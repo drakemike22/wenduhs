@@ -15,6 +15,8 @@ const browserTaskbarButton = document.createElement("button");
 
 browserTaskbarButton.textContent = "Wenduhs Browser";
 
+browserTaskbarButton.style.display = "none";
+
 taskbarWindows.appendChild(browserTaskbarButton);
 
 browserIcon.addEventListener("click", function () {
@@ -26,8 +28,14 @@ closeButton.addEventListener("click", function() {
 });
 
 minimizeButton.addEventListener("click", function() {
-    browserWindow.style.display = "none";  
+    browserWindow.style.display = "none";
+    browserTaskbarButton.style.display = "block";  
 });
+
+browserTaskbarButton.addEventListener("click", function() {
+    browserWindow.style.display = "block";
+    browserTaskbarButton.style.display = "none";
+})
 
 
 
