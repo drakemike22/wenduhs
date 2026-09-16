@@ -13,6 +13,8 @@ const taskbarWindows = document.querySelector(".taskbar-windows");
 
 const browserTaskbarButton = document.createElement("button");
 
+const browserTitlebar = document.querySelector(".browser-titlebar");
+
 browserTaskbarButton.textContent = "Wenduhs Browser";
 
 browserTaskbarButton.style.display = "none";
@@ -35,8 +37,30 @@ minimizeButton.addEventListener("click", function() {
 browserTaskbarButton.addEventListener("click", function() {
     browserWindow.style.display = "block";
     browserTaskbarButton.style.display = "none";
-})
+});
 
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+browserTitlebar.addEventListener("mousedown", function (event) {
+    isDragging = true;
+
+    offsetX = event.clientX - browserWindow.offsetLeft;
+    offsetY = event.clientY - browserWindow.offsetTop;
+
+});
+
+document.addEventListener("mousemove", function (event) {
+    if(isDragging) {
+        browserWindow.style.left = `${event.clientX - offsetX}px`;
+        browserWindow.style.top = `${event.clientY - offsetY}px`;
+    }
+});
+
+document.addEventListener("mouseup", function () {
+    isDragging = false;
+});
 
 
 function updateClock() {
